@@ -26,6 +26,12 @@
   <div class="clear"></div>
 </div>
 
+  <div class="crm-section">
+    <div class="label">{$form.multiple_mimetypes.label}</div>
+    <div class="content">{$form.multiple_mimetypes.html}</div>
+    <div class="clear"></div>
+  </div>
+
   {* FOOTER *}
 <div class="crm-submit-buttons">
 {include file="CRM/common/formButtons.tpl" location="bottom"}

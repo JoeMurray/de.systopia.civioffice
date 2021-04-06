@@ -37,6 +37,17 @@ class CRM_Civioffice_Form_UploadDocumentStore_UploadDocumentStoreSettings extend
             E::ts("Private Document Upload Enabled")
         );
 
+        $multile_mimetypes = ['pdf', 'docx', 'odt'];
+
+        $this->add(
+            'select',
+            'multiple_mimetypes',
+            E::ts("Multiple mimetypes"),
+            $multile_mimetypes,
+            false,
+            ['class' => 'crm-select2', 'multiple' => 'multiple']
+        );
+
         $this->setDefaults(
             [
                 CRM_Civioffice_DocumentStore_Upload::UPLOAD_PUBLIC_ENABLED =>
