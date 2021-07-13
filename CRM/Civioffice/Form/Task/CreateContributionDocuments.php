@@ -24,12 +24,12 @@ class CRM_Civioffice_Form_Task_CreateContributionDocuments extends CRM_Contribut
     public $contribution_ids;
 
     public function buildQuickForm() {
+         $this->setTitle(E::ts("CiviOffice - Generate Documents based on contributions"));
+        $this->contribution_ids = implode(",", $this->_componentIds);
 
-      $this->contribution_ids = implode(",", $this->_componentIds);
-
-    // export form elements
-    $this->assign('contribution_ids', $this->contribution_ids);
-    parent::buildQuickForm();
+        // export form elements
+        $this->assign('contribution_ids', $this->contribution_ids);
+        parent::buildQuickForm();
   }
 
   public function postProcess() {
