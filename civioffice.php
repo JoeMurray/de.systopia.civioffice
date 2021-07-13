@@ -13,7 +13,7 @@ function civioffice_civicrm_searchTasks($objectType, &$tasks)
         case 'contact':
             $tasks[] = [
                 'title' => E::ts('Create Documents (CiviOffice)'),
-                'class' => 'CRM_Civioffice_Form_Task_CreateDocuments',
+                'class' => 'CRM_Civioffice_Form_Task_CreateContactDocuments',
                 'result' => false
             ];
             break;

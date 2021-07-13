@@ -18,11 +18,11 @@ use CRM_Civioffice_ExtensionUtil as E;
 /**
  * Search task implementation: create only office documents
  */
-class CRM_Civioffice_Form_Task_CreateDocuments extends CRM_Contact_Form_Task
+class CRM_Civioffice_Form_Task_CreateContactDocuments extends CRM_Contact_Form_Task
 {
     public function buildQuickForm()
     {
-        $this->setTitle(E::ts("CiviOffice - Generate Documents"));
+        $this->setTitle(E::ts("CiviOffice - Generate Documents based on contacts"));
 
         $config = CRM_Civioffice_Configuration::getConfig();
 
