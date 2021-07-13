@@ -20,7 +20,7 @@ function civioffice_civicrm_searchTasks($objectType, &$tasks)
         case 'contribution':
             $tasks[] = [
                 'title' => E::ts('Create Documents (CiviOffice)'),
-                'class' => 'CRM_Civioffice_Form_Task_CreateDocuments', //todo: link contribution search task
+                'class' => 'CRM_Civioffice_Form_Task_CreateContributionDocuments',
                 'result' => false
             ];
             break;
