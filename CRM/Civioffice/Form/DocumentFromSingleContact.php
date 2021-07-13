@@ -118,7 +118,7 @@ class CRM_Civioffice_Form_DocumentFromSingleContact extends CRM_Core_Form {
             )
         );
 
-        // Save current page link (e.g. search page)
+        // Save current page link (e.g. contact page)
         $return_link = html_entity_decode(CRM_Core_Session::singleton()->readUserContext());
         $return_link = base64_encode($return_link);
 
