@@ -138,7 +138,7 @@ class CRM_Civioffice_DocumentRenderer_LocalUnoconv extends CRM_Civioffice_Docume
      * @param \CRM_Civioffice_DocumentStore_LocalTemp $temp_store
      * @param string $target_mime_type
      * @param string $entity_type
-     *   entity type, e.g. 'contact'
+     *   entity type, e.g. 'contact' or 'contribution'
      *
      * @return array
      *   list of documents with target file name

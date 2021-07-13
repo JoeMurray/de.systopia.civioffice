@@ -40,7 +40,7 @@ class CRM_Civioffice_ConversionJob
 
     /**
      * @var string $entity_type
-     *   Type of entity (like 'contact' ID)
+     *   Type of entity (like 'contact' or 'contribution' ID)
      */
     protected $entity_type;
 

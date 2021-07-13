@@ -37,7 +37,7 @@ abstract class CRM_Civioffice_DocumentRenderer extends CRM_Civioffice_OfficeComp
      * @param CRM_Civioffice_DocumentStore_LocalTemp $temp_store
      * @param string $target_mime_type
      * @param string $entity_type
-     *   entity type, e.g. 'contact'
+     *   entity type, e.g. 'contact' or 'contribution'
      *
      * @return array
      *   list of token_name => token value
@@ -60,7 +60,7 @@ abstract class CRM_Civioffice_DocumentRenderer extends CRM_Civioffice_OfficeComp
      *   entity ID, e.g. contact_id
      *
      * @param string $entity_type
-     *   entity type, e.g. 'contact'
+     *   entity type, e.g. 'contact' or 'contribution'
      *
      * @return array
      *   list of token_name => token value
@@ -80,7 +80,7 @@ abstract class CRM_Civioffice_DocumentRenderer extends CRM_Civioffice_OfficeComp
      *   entity ID, e.g. contact_id
      *
      * @param string $entity_type
-     *   entity type, e.g. 'contact'
+     *   entity type, e.g. 'contact' or 'contribution'
      *
      * @return string
      *   input string with the tokens replaced
