@@ -9,19 +9,27 @@ use CRM_Civioffice_ExtensionUtil as E;
 
 function civioffice_civicrm_searchTasks($objectType, &$tasks)
 {
-    if ($objectType == 'contact')
-    {
-        $tasks[] = [
-            'title' => E::ts('Create Documents (CiviOffice)'),
-            'class' => 'CRM_Civioffice_Form_Task_CreateDocuments',
-            'result' => false
-        ];
+    switch ($objectType) {
+        case 'contact':
+            $tasks[] = [
+                'title' => E::ts('Create Documents (CiviOffice)'),
+                'class' => 'CRM_Civioffice_Form_Task_CreateDocuments',
+                'result' => false
+            ];
+            break;
+        case 'contribution':
+            $tasks[] = [
+                'title' => E::ts('Create Documents (CiviOffice)'),
+                'class' => 'CRM_Civioffice_Form_Task_CreateDocuments', //todo: link contribution search task
+                'result' => false
+            ];
+            break;
     }
 }
 
 function civioffice_civicrm_summaryActions(&$actions, $contactID)
 {
-    // add "open document with single contact" action
+    // add 'open document with single contact" action
     if (CRM_Core_Permission::check('administer CiviCRM')) // todo correct?
     {
         $actions['open_document_with_single_contact'] = [
