@@ -21,7 +21,7 @@
 
 
 <p>Contribution IDs: <b>{$contribution_ids}</b></p>
-
+<p>Conctact IDs of contributions: <b>{$contact_ids}</b></p>
 
 {* FOOTER *}
 <div class="crm-submit-buttons">

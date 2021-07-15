@@ -21,18 +21,27 @@ use CRM_Civioffice_ExtensionUtil as E;
  * @see https://docs.civicrm.org/dev/en/latest/framework/quickform/
  */
 class CRM_Civioffice_Form_Task_CreateContributionDocuments extends CRM_Contribute_Form_Task {
-    public $contribution_ids;
-
     public function buildQuickForm() {
-         $this->setTitle(E::ts("CiviOffice - Generate Documents based on contributions"));
-        $this->contribution_ids = implode(",", $this->_componentIds);
+        $this->setTitle(E::ts("CiviOffice - Generate Documents based on contributions"));
+
+        $contribution_ids_string = implode(",", $this->_contributionIds);
+        $contact_id_string = '';
+
+        $contributions = \Civi\Api4\Contribution::get()
+            ->addWhere('id', 'IN', $this->_contributionIds)
+            ->execute();
+        foreach ($contributions as $contribution) {
+            $contact_id_string .= $contribution['contact_id'] . ', ';
+        }
 
         // export form elements
-        $this->assign('contribution_ids', $this->contribution_ids);
+        $this->assign('contribution_ids', $contribution_ids_string);
+        $this->assign('contact_ids', $contact_id_string);
+
         parent::buildQuickForm();
   }
 
-  public function postProcess() {
+    public function postProcess() {
     $values = $this->exportValues();
 
     parent::postProcess();
