@@ -198,7 +198,7 @@ class CRM_Civioffice_DocumentRenderer_LocalUnoconv extends CRM_Civioffice_Docume
 
                 // Step 2/4 replace tokens
                 $fileContent = $this->wrapTokensInStringWithXmlEscapeCdata($fileContent);
-                $fileContent = $this->replaceAllTokens($fileContent, $entity_id, 'contact');
+                $fileContent = $this->replaceAllTokens($fileContent, $entity_id, $entity_type);
 
                 // Step 3/4 repack it again as xml (docx)
                 $zip->addFromString($fileName, $fileContent);
