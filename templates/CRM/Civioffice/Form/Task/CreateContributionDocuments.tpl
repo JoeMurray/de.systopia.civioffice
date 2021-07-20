@@ -20,8 +20,8 @@
 </div>
 
 
-<p>Contribution IDs: <b>{$contribution_ids}</b></p>
-<p>Contact IDs of contributions: <b>{$contact_ids}</b></p>
+<p>Contribution IDs: <b>{$contribution_ids}</b></p> {* FIXME debug output *}
+<p>Contact IDs of contributions: <b>{$contact_ids}</b></p> {* FIXME debug output *}
 
   <div class="crm-section">
     <div class="label">{$form.document_uri.label}</div>
