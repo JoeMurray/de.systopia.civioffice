@@ -21,7 +21,7 @@
 
 
 <p>Contribution IDs: <b>{$contribution_ids}</b></p>
-<p>Conctact IDs of contributions: <b>{$contact_ids}</b></p>
+<p>Contact IDs of contributions: <b>{$contact_ids}</b></p>
 
   <div class="crm-section">
     <div class="label">{$form.document_uri.label}</div>
