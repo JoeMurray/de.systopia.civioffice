@@ -143,7 +143,7 @@ class CRM_Civioffice_Form_Task_CreateContributionDocuments extends CRM_Contribut
                     $values['document_uri'],
                     $temp_folder_path,
                     $entity_IDs,
-                    'contact',
+                    'contribution',
                     $values['target_mime_type'],
                     E::ts('Initialized')
                 )

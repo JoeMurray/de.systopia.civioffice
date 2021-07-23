@@ -47,7 +47,7 @@ abstract class CRM_Civioffice_DocumentRenderer extends CRM_Civioffice_OfficeComp
         array $entity_ids,
         CRM_Civioffice_DocumentStore_LocalTemp $temp_store,
         string $target_mime_type,
-        $entity_type = 'contact'
+        $entity_type
     ): array;
 
     /**
@@ -87,7 +87,7 @@ abstract class CRM_Civioffice_DocumentRenderer extends CRM_Civioffice_OfficeComp
      *
      * @throws \Exception
      */
-    public function replaceAllTokens($string, $entity_id, $entity_type = 'contact'): string
+    public function replaceAllTokens($string, $entity_id, $entity_type): string
     {
         // TODO: use additional token system
 
