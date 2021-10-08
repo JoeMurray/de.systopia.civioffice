@@ -1,10 +1,14 @@
 <?php
 use CRM_Civioffice_ExtensionUtil as E;
 
+
+
 /**
  * Collection of upgrade steps.
  */
 class CRM_Civioffice_Upgrader extends CRM_Civioffice_Upgrader_Base {
+
+    private $ACTIVITY_NAME = 'Änderung individuelle Daten';
 
   // By convention, functions that look like "function upgrade_NNNN()" are
   // upgrade tasks. They are executed in order (like Drupal's hook_update_N).
@@ -108,28 +112,41 @@ class CRM_Civioffice_Upgrader extends CRM_Civioffice_Upgrader_Base {
    * @return TRUE on success
    * @throws Exception
    */
-  // public function upgrade_4203() {
-  //   $this->ctx->log->info('Planning update 4203'); // PEAR Log interface
+   public function upgrade_0001() {
+       if ($this->activityAlreadyExists()) {
+           return true;
+       }
 
-  //   $minId = CRM_Core_DAO::singleValueQuery('SELECT coalesce(min(id),0) FROM civicrm_contribution');
-  //   $maxId = CRM_Core_DAO::singleValueQuery('SELECT coalesce(max(id),0) FROM civicrm_contribution');
-  //   for ($startId = $minId; $startId <= $maxId; $startId += self::BATCH_SIZE) {
-  //     $endId = $startId + self::BATCH_SIZE - 1;
-  //     $title = E::ts('Upgrade Batch (%1 => %2)', array(
-  //       1 => $startId,
-  //       2 => $endId,
-  //     ));
-  //     $sql = '
-  //       UPDATE civicrm_contribution SET foobar = whiz(wonky()+wanker)
-  //       WHERE id BETWEEN %1 and %2
-  //     ';
-  //     $params = array(
-  //       1 => array($startId, 'Integer'),
-  //       2 => array($endId, 'Integer'),
-  //     );
-  //     $this->addTask($title, 'executeSql', $sql, $params);
-  //   }
-  //   return TRUE;
-  // }
+       // create value as it doesn't exist
+
+
+       // todo set active
+
+
+   }
+
+
+    public function activityAlreadyExists(): bool
+    {
+        $result = civicrm_api3('OptionValue', 'get', [
+            'sequential' => 1,
+            'label' => "Änderung individuelle Daten",
+        ]);
+
+        try {
+
+            if ($result['values']['label'] = 'Änderung individuelle Daten' == $this->ACTIVITY_NAME) {
+                return true;
+            }
+
+        } catch (Exception $ex) {
+            // todo log
+            return false;
+        }
+
+
+        return false;
+    }
+
 
 }
